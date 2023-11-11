@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://qjo4wmuw47sr"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_lr4nu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aguy6"]
+size = Vector2(16, 24)
+
+[sub_resource type="Gradient" id="Gradient_5y43x"]
+colors = PackedColorArray(0, 0.686275, 1, 1, 0.454902, 0.839216, 0.823529, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kwnec"]
+gradient = SubResource("Gradient_5y43x")
+width = 16
+height = 24
+fill_to = Vector2(0, 1)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_lr4nu")
+apex_vel = 25.0
+jump_buffer_time = 0.08
+max_corner_correction = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_aguy6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 8.0
+texture = SubResource("GradientTexture2D_kwnec")
