@@ -22,7 +22,7 @@ extends CharacterBody2D
 @export_range(0.0, 0.5) var jump_buffer_time := 0.1
 
 @export_group("Corner Correction")
-@export var enable_corner_correction := true
+@export var enable_corner_correction := false
 @export var max_corner_correction := 6
 @export var corner_correction_precision := 2.0
 
